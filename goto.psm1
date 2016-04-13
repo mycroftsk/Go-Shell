@@ -39,7 +39,7 @@ function goto([string]$key, [string]$selectedPath = "", [switch]$help, [switch]$
     #------------------------------------Gd Last------------------------------------
     if($last -or $l)
     {
-        $rememberFilePath = $Global:GoDataDirectory + $Global:GoRememberFileName
+		$rememberFilePath = $Global:GoDataDirectory + $Global:GoRememberFileName
         $rememberContent = Get-Content $rememberFilePath
 
         $lastSelected = ""
