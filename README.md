@@ -2,47 +2,35 @@
 
 Allows PowerShell users to navigate to a specific directory in a quick and easy way using bookmarks.
 
-![image](https://dl.dropboxusercontent.com/u/38619078/images/Go-Shell.gif)
+###Manual Install###
 
-##Installation##
-
-If you have [PsGet](http://psget.net/) installed you can simply execute the following:
-
-######PowerShell 3######
-	Install-Module Go
-
-######PowerShell 2######
-	Install-Module Go -AddToProfile
-
-####Manual Install####
-
-1. Copy `Go.psm1` to your modules folder (e.g. `$Env:PSModulePath\Go\`)
-2. Execute `Import-Module Go` (or add this command to your profile)
+1. Copy `goto.psm1` to your modules folder (e.g. `$Env:PSModulePath\GoTo\`)
+2. Execute `Import-Module goto` (or add this command to your profile)
 3. Bookmark away!
 
 ####Customization####
-Go-Shell stores its data normally in two files located in the `~\AppData\Local\Go\`-folder.
+Go-Shell stores its data normally in two files located in the `~\AppData\Local\Goto\`-folder.
 
 This is changeable by setting this in your profile:
 
-<pre>$Global:GoDataDirectory = "$([Environment]::GetFolderPath('LocalApplicationData'))\Go\"
-$Global:GoRememberFileName = "go-shell-remember-last.txt"
-$Global:GoBookmarkFileName = "go-shell.txt"
+<pre>$Global:GoDataDirectory = "$([Environment]::GetFolderPath('LocalApplicationData'))\GoTo\"
+$Global:GoRememberFileName = "goto-shell-remember-last.txt"
+$Global:GoBookmarkFileName = "goto.txt"
 </pre>
 
 The values above are the defaults.
 
-##How to Use Go##
+##How to Use goto##
 
 <pre>Usage:
-    gd label
-    gd label -delete or -d
-    gd label -show or -s
-    gd label -add or -a
-    gd label C:\SomePath -add or -a
-    gd -showAll or -sa
-    gd -clear or -c
-    gd -last or -l
+    goto label
+    goto label -delete or -d
+    goto label -show or -s
+    goto label -add or -a
+    goto label C:\SomePath -add or -a
+    goto -showAll or -sa
+    goto -clear or -c
+    goto -last or -l
 
 Switches:
     -add or -a             Adds the current directory.
